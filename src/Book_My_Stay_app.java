@@ -1,12 +1,16 @@
-public class BookMyStayApp {
+class SearchService{
 
-    public static void main(String[] args) {
+    void searchRooms(RoomInventory inventory){
 
-        System.out.println("=================================");
-        System.out.println("WELCOME TO BOOK MY STAY APP");
-        System.out.println("Hotel Booking Management System");
-        System.out.println("Version : 1.0");
-        System.out.println("=================================");
+        System.out.println("Available Rooms");
 
+        for(String key : inventory.inventory.keySet()){
+
+            int count = inventory.inventory.get(key);
+
+            if(count>0){
+                System.out.println(key+" available : "+count);
+            }
+        }
     }
 }
