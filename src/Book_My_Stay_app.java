@@ -1,12 +1,24 @@
-public class BookMyStayApp {
+import java.util.LinkedList;
+import java.util.Queue;
 
-    public static void main(String[] args) {
+class Reservation{
 
-        System.out.println("=================================");
-        System.out.println("WELCOME TO BOOK MY STAY APP");
-        System.out.println("Hotel Booking Management System");
-        System.out.println("Version : 1.0");
-        System.out.println("=================================");
+    String guestName;
+    String roomType;
 
+    Reservation(String name,String room){
+        guestName=name;
+        roomType=room;
+    }
+}
+
+class BookingQueue{
+
+    Queue<Reservation> queue = new LinkedList<>();
+
+    void addRequest(Reservation r){
+
+        queue.offer(r);
+        System.out.println("Booking request added for "+r.guestName);
     }
 }
