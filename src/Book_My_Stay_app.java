@@ -1,12 +1,19 @@
-public class BookMyStayApp {
+import java.util.HashMap;
 
-    public static void main(String[] args) {
+class RoomInventory{
 
-        System.out.println("=================================");
-        System.out.println("WELCOME TO BOOK MY STAY APP");
-        System.out.println("Hotel Booking Management System");
-        System.out.println("Version : 1.0");
-        System.out.println("=================================");
+    HashMap<String,Integer> inventory = new HashMap<>();
 
+    void addRoom(String type,int count){
+        inventory.put(type,count);
+    }
+
+    void displayInventory(){
+
+        System.out.println("Room Inventory");
+
+        for(String key : inventory.keySet()){
+            System.out.println(key+" : "+inventory.get(key));
+        }
     }
 }
